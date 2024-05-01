@@ -15,9 +15,24 @@ fn odd_count(n: u64) -> u64 {
     n/2
 }
 
+fn flick_switch(list: &[&str]) -> Vec<bool> {
+    let mut res = Vec::new();
+    let mut switch = true;
+    for i in list{
+        if i.to_string() != "flick" {
+            res.push(switch);
+        } else {
+            switch = !switch;
+            res.push(switch);
+        }
+    }
+    res
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 7511", odd_count(15023))
+    println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
+    // println!("{} | 7511", odd_count(15023))
     // println!("{:?}, [1,2,4,8,16]", powers_of_two(4));
     // println!("{}", reversed_strings("world"))
 }

@@ -11,8 +11,13 @@ fn powers_of_two(n: u8) -> Vec<u128> {
     res
 }
 
+fn odd_count(n: u64) -> u64 {
+    n/2
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?}, [1,2,4,8,16]", powers_of_two(4));
+    println!("{} | 7511", odd_count(15023))
+    // println!("{:?}, [1,2,4,8,16]", powers_of_two(4));
     // println!("{}", reversed_strings("world"))
 }

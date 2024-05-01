@@ -1,9 +1,5 @@
 fn reversed_strings(phrase: &str) -> String {
-    let mut res = String::new();
-    for char in phrase.chars().rev(){
-        res += &char.to_string();
-    }
-    return res
+    return phrase.chars().rev().collect()
 }
 
 fn main() {

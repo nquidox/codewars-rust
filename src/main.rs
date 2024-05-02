@@ -29,9 +29,33 @@ fn flick_switch(list: &[&str]) -> Vec<bool> {
     res
 }
 
+fn well(x: &[&str]) -> &'static str {
+    let mut g_counter = 0;
+    let mut b_counter = 0;
+
+    for i in x{
+        if i.to_string() == "good"{
+            g_counter += 1;
+        } else {
+            b_counter += 1;
+        }
+    }
+
+    if b_counter > 0 && g_counter == 0{
+        return "Fail!"
+    } else if g_counter > 0 && g_counter < 3{
+        return "Publish!"
+    } else if g_counter > 2 {
+        return "I smell a series!"
+    } else {
+        return "Fail!"
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
+    println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]))
+    //println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
     // println!("{} | 7511", odd_count(15023))
     // println!("{:?}, [1,2,4,8,16]", powers_of_two(4));
     // println!("{}", reversed_strings("world"))

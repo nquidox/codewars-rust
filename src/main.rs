@@ -52,9 +52,14 @@ fn well(x: &[&str]) -> &'static str {
     }
 }
 
+fn cockroach_speed(s: f64) -> i64 {
+    return (s * 27.777777777777778) as i64
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]))
+    println!("{} | 215", cockroach_speed(7.774066957199317))
+    // println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]))
     //println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
     // println!("{} | 7511", odd_count(15023))
     // println!("{:?}, [1,2,4,8,16]", powers_of_two(4));

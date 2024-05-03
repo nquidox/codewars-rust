@@ -41,14 +41,14 @@ fn well(x: &[&str]) -> &'static str {
         }
     }
 
-    if b_counter > 0 && g_counter == 0{
-        return "Fail!"
-    } else if g_counter > 0 && g_counter < 3{
-        return "Publish!"
+    return if b_counter > 0 && g_counter == 0 {
+        "Fail!"
+    } else if g_counter > 0 && g_counter < 3 {
+        "Publish!"
     } else if g_counter > 2 {
-        return "I smell a series!"
+        "I smell a series!"
     } else {
-        return "Fail!"
+        "Fail!"
     }
 }
 
@@ -60,13 +60,22 @@ fn remove_exclamation_marks(input: &str) -> String {
     input.chars().filter(|c| c.to_string() != "!").collect()
 }
 
+fn pillars(num_of_pillars: u32, distance: u32, width: u32) -> u32 {
+    return if num_of_pillars == 1 {
+        0
+    } else {
+        (num_of_pillars - 2) * width + distance * (num_of_pillars - 1) * 100
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"))
-    // println!("{} | 215", cockroach_speed(7.774066957199317))
-    // println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]))
-    //println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
-    // println!("{} | 7511", odd_count(15023))
+    println!("{} | 15270", pillars(11, 15, 30));
+    // println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"));
+    // println!("{} | 215", cockroach_speed(7.774066957199317));
+    // println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]));
+    //println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]));
+    // println!("{} | 7511", odd_count(15023));
     // println!("{:?}, [1,2,4,8,16]", powers_of_two(4));
-    // println!("{}", reversed_strings("world"))
+    // println!("{}", reversed_strings("world"));
 }

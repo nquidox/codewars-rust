@@ -68,9 +68,18 @@ fn pillars(num_of_pillars: u32, distance: u32, width: u32) -> u32 {
     }
 }
 
+fn invert(values: &[i32]) -> Vec<i32> {
+    let mut new_vec = Vec::new();
+    for i in values{
+        new_vec.push(-i)
+    }
+    return new_vec
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 15270", pillars(11, 15, 30));
+    println!("{:?} | [-1,-2,-3,-4,-5]", invert(&vec![1,2,3,4,5]));
+    // println!("{} | 15270", pillars(11, 15, 30));
     // println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"));
     // println!("{} | 215", cockroach_speed(7.774066957199317));
     // println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]));

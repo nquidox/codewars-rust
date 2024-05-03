@@ -56,9 +56,14 @@ fn cockroach_speed(s: f64) -> i64 {
     return (s * 27.777777777777778) as i64
 }
 
+fn remove_exclamation_marks(input: &str) -> String {
+    input.chars().filter(|c| c.to_string() != "!").collect()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 215", cockroach_speed(7.774066957199317))
+    println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"))
+    // println!("{} | 215", cockroach_speed(7.774066957199317))
     // println!("{} | I smell a series!", well(&["good", "bad", "bad", "bad", "bad", "good", "bad", "bad", "good"]))
     //println!("{:?} | [false, true, false, true, false]", flick_switch(&["flick", "flick", "flick", "flick", "flick"]))
     // println!("{} | 7511", odd_count(15023))

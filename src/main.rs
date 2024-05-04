@@ -80,9 +80,14 @@ fn string_to_number(s: &str) -> i32 {
     s.parse::<i32>().unwrap()
 }
 
+fn number_to_string(i: i32) -> String {
+    i.to_string()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 1234", string_to_number("1234"));
+    println!("{} | 1234", number_to_string(1234))
+    // println!("{} | 1234", string_to_number("1234"));
     // println!("{:?} | [-1,-2,-3,-4,-5]", invert(&vec![1,2,3,4,5]));
     // println!("{} | 15270", pillars(11, 15, 30));
     // println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"));

@@ -84,9 +84,14 @@ fn number_to_string(i: i32) -> String {
     i.to_string()
 }
 
+fn maps(values: &Vec<i32>) -> Vec<i32> {
+    values.iter().map(|x| x*2).collect()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 1234", number_to_string(1234))
+    println!("{:?} | [2, 4, 6, 8]", maps(&vec![1, 2, 3, 4]))
+    // println!("{} | 1234", number_to_string(1234))
     // println!("{} | 1234", string_to_number("1234"));
     // println!("{:?} | [-1,-2,-3,-4,-5]", invert(&vec![1,2,3,4,5]));
     // println!("{} | 15270", pillars(11, 15, 30));

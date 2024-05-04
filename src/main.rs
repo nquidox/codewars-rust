@@ -76,9 +76,14 @@ fn invert(values: &[i32]) -> Vec<i32> {
     return new_vec
 }
 
+fn string_to_number(s: &str) -> i32 {
+    s.parse::<i32>().unwrap()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [-1,-2,-3,-4,-5]", invert(&vec![1,2,3,4,5]));
+    println!("{} | 1234", string_to_number("1234"));
+    // println!("{:?} | [-1,-2,-3,-4,-5]", invert(&vec![1,2,3,4,5]));
     // println!("{} | 15270", pillars(11, 15, 30));
     // println!("{} | Hello World", remove_exclamation_marks("Hello World!!!"));
     // println!("{} | 215", cockroach_speed(7.774066957199317));

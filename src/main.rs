@@ -92,9 +92,14 @@ fn monkey_count(n: i32) -> Vec<i32> {
     (1..n+1).collect()
 }
 
+fn even_or_odd(number: i32) -> &'static str {
+    if number % 2 == 0 {"Even"} else {"Odd"}
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [1, 2, 3, 4, 5]", monkey_count(5));
+    println!("{} | Even", even_or_odd(2))
+    // println!("{:?} | [1, 2, 3, 4, 5]", monkey_count(5));
     // println!("{:?} | [2, 4, 6, 8]", maps(&vec![1, 2, 3, 4]));
     // println!("{} | 1234", number_to_string(1234));
     // println!("{} | 1234", string_to_number("1234"));

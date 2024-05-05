@@ -113,9 +113,20 @@ fn find_multiples(n: u32, limit: u32) -> Vec<u32> {
     (n..=limit).step_by(n as usize).collect()
 }
 
+fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
+    if input.is_empty(){vec![]}
+    else {
+        vec![
+        input.iter().filter(|x| x.is_positive()).count() as i32,
+        input.iter().filter(|x| x.is_negative()).sum()
+        ]
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54))
+    println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+    // println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54));
     // println!("{} | 16", grow(vec![4, 1, 1, 1, 4]));
     // println!("{} | Even", even_or_odd(2))
     // println!("{:?} | [1, 2, 3, 4, 5]", monkey_count(5));

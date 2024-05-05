@@ -100,10 +100,23 @@ fn grow(nums: Vec<i32>) -> i32 {
     nums.iter().product()
 }
 
+fn find_multiples(n: u32, limit: u32) -> Vec<u32> {
+    // let mut res = Vec::new();
+    // let mut x = n;
+    //
+    // while x <= limit {
+    //     res.push(x);
+    //     x += n;
+    // }
+    //
+    // res
+    (n..=limit).step_by(n as usize).collect()
+}
 
 fn main() {
     println!("Codewars");
-    println!("{} | 16", grow(vec![4, 1, 1, 1, 4]));
+    println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54))
+    // println!("{} | 16", grow(vec![4, 1, 1, 1, 4]));
     // println!("{} | Even", even_or_odd(2))
     // println!("{:?} | [1, 2, 3, 4, 5]", monkey_count(5));
     // println!("{:?} | [2, 4, 6, 8]", maps(&vec![1, 2, 3, 4]));

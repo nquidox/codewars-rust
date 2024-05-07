@@ -131,9 +131,21 @@ fn square_sum(vec: Vec<i32>) -> i32 {
     vec.iter().map(|x| x*x).sum()
 }
 
+fn how_much_i_love_you(nb_petals: u16) -> &'static str {
+    match nb_petals % 6 {
+       1 => "I love you",
+       2 => "a little",
+       3 => "a lot",
+       4 => "passionately",
+       5 => "madly",
+       _ => "not at all",
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 9", square_sum(vec![1, 2, 2]));
+    println!("{} | I love you", how_much_i_love_you(13))
+    // println!("{} | 9", square_sum(vec![1, 2, 2]));
     // println!("{} | cODewARs", to_alternating_case("CodEWarS"));
     // println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
     // println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54));

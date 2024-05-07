@@ -127,10 +127,15 @@ fn to_alternating_case(s: &str) -> String {
     s.chars().map(|c| {if c.is_uppercase(){c.to_lowercase().to_string()} else {c.to_uppercase().to_string()}}).collect()
 }
 
+fn square_sum(vec: Vec<i32>) -> i32 {
+    vec.iter().map(|x| x*x).sum()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | cODewARs", to_alternating_case("CodEWarS"))
-    // println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
+    println!("{} | 9", square_sum(vec![1, 2, 2]));
+    // println!("{} | cODewARs", to_alternating_case("CodEWarS"));
+    // println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
     // println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54));
     // println!("{} | 16", grow(vec![4, 1, 1, 1, 4]));
     // println!("{} | Even", even_or_odd(2))

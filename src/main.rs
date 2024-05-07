@@ -142,9 +142,14 @@ fn how_much_i_love_you(nb_petals: u16) -> &'static str {
     }
 }
 
+fn count_sheep(sheep: &[bool]) -> u8 {
+    sheep.iter().filter(|&&x| x).count() as u8
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | I love you", how_much_i_love_you(13))
+    println!("{} | 0", count_sheep(&[false]))
+    // println!("{} | I love you", how_much_i_love_you(13))
     // println!("{} | 9", square_sum(vec![1, 2, 2]));
     // println!("{} | cODewARs", to_alternating_case("CodEWarS"));
     // println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));

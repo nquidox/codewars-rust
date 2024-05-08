@@ -123,6 +123,7 @@ fn count_positives_sum_negatives(input: Vec<i32>) -> Vec<i32> {
     }
 }
 
+
 fn to_alternating_case(s: &str) -> String {
     s.chars().map(|c| {if c.is_uppercase(){c.to_lowercase().to_string()} else {c.to_uppercase().to_string()}}).collect()
 }
@@ -146,16 +147,27 @@ fn count_sheep(sheep: &[bool]) -> u8 {
     sheep.iter().filter(|&&x| x).count() as u8
 }
 
+fn dna_strand(dna: &str) -> String {
+    dna.chars().map(|c| match c {
+        'A' => "T",
+        'C' => "G",
+        'T' => "A",
+        'G' => "C",
+        _ => panic!()
+    }).collect()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 0", count_sheep(&[false]))
-    // println!("{} | I love you", how_much_i_love_you(13))
+    println!("{} | TAACG", dna_strand("ATTGC"));
+    // println!("{} | 0", count_sheep(&[false]));
+    // println!("{} | I love you", how_much_i_love_you(13));
     // println!("{} | 9", square_sum(vec![1, 2, 2]));
     // println!("{} | cODewARs", to_alternating_case("CodEWarS"));
     // println!("{:?} | [10, -65]", count_positives_sum_negatives(vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
     // println!("{:?} | [11, 22, 33, 44]", find_multiples(11, 54));
     // println!("{} | 16", grow(vec![4, 1, 1, 1, 4]));
-    // println!("{} | Even", even_or_odd(2))
+    // println!("{} | Even", even_or_odd(2));
     // println!("{:?} | [1, 2, 3, 4, 5]", monkey_count(5));
     // println!("{:?} | [2, 4, 6, 8]", maps(&vec![1, 2, 3, 4]));
     // println!("{} | 1234", number_to_string(1234));

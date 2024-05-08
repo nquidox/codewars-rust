@@ -165,9 +165,20 @@ fn sum_of_minimums(numbers: [[u8; 4]; 4]) -> u8 {
     numbers.iter().map(|row| row.iter().min().unwrap()).sum()
 }
 
+fn sum_or_product(list: &[i64], n: usize) -> String {
+    let mut sorted = list.to_vec();
+    sorted.sort_by(|a, b| b.cmp(a));
+
+    let sum: i64 = sorted.iter().take(n).sum();
+    let product: i64 = sorted.iter().skip(sorted.len()-n).product();
+
+    if sum > product {"sum".to_string()} else if sum < product {"product".to_string()} else {"same".to_string()}
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 16", sum_of_minimums([[7, 9, 8, 6], [6, 5, 4, 3], [5, 7, 4, 5], [7, 9, 4, 3]]))
+    println!("{} | same", sum_or_product(&[13, 8, 22, 39, 12, 6, 14, 19, 4, 7, 33], 4));
+    // println!("{} | 16", sum_of_minimums([[7, 9, 8, 6], [6, 5, 4, 3], [5, 7, 4, 5], [7, 9, 4, 3]]));
     // println!("{} | 2", find_short("Let's travel abroad shall we"));
     // println!("{} | TAACG", dna_strand("ATTGC"));
     // println!("{} | 0", count_sheep(&[false]));

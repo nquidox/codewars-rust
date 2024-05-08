@@ -161,9 +161,14 @@ fn find_short(s: &str) -> u32 {
     s.split_whitespace().map(|word| word.len()).min().unwrap_or(0) as u32
 }
 
+fn sum_of_minimums(numbers: [[u8; 4]; 4]) -> u8 {
+    numbers.iter().map(|row| row.iter().min().unwrap()).sum()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 2", find_short("Let's travel abroad shall we"));
+    println!("{} | 16", sum_of_minimums([[7, 9, 8, 6], [6, 5, 4, 3], [5, 7, 4, 5], [7, 9, 4, 3]]))
+    // println!("{} | 2", find_short("Let's travel abroad shall we"));
     // println!("{} | TAACG", dna_strand("ATTGC"));
     // println!("{} | 0", count_sheep(&[false]));
     // println!("{} | I love you", how_much_i_love_you(13));

@@ -157,9 +157,14 @@ fn dna_strand(dna: &str) -> String {
     }).collect()
 }
 
+fn find_short(s: &str) -> u32 {
+    s.split_whitespace().map(|word| word.len()).min().unwrap_or(0) as u32
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | TAACG", dna_strand("ATTGC"));
+    println!("{} | 2", find_short("Let's travel abroad shall we"));
+    // println!("{} | TAACG", dna_strand("ATTGC"));
     // println!("{} | 0", count_sheep(&[false]));
     // println!("{} | I love you", how_much_i_love_you(13));
     // println!("{} | 9", square_sum(vec![1, 2, 2]));

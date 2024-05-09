@@ -175,9 +175,24 @@ fn sum_or_product(list: &[i64], n: usize) -> String {
     if sum > product {"sum".to_string()} else if sum < product {"product".to_string()} else {"same".to_string()}
 }
 
+fn check_exam(arr_a: &[&str], arr_b: &[&str]) -> i64 {
+    let mut sum = 0;
+    for i in 0..arr_a.len(){
+        if arr_a[i] == arr_b[i]{
+            sum += 4
+        } else if arr_b[i] == ""{
+            continue
+        } else {
+            sum -= 1
+        }
+    }
+    if sum > 0 { sum } else { 0 }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | same", sum_or_product(&[13, 8, 22, 39, 12, 6, 14, 19, 4, 7, 33], 4));
+    println!("{} | 6", check_exam(&["a", "a", "b", "b"], &["a", "c", "b", "d"]));
+    // println!("{} | same", sum_or_product(&[13, 8, 22, 39, 12, 6, 14, 19, 4, 7, 33], 4));
     // println!("{} | 16", sum_of_minimums([[7, 9, 8, 6], [6, 5, 4, 3], [5, 7, 4, 5], [7, 9, 4, 3]]));
     // println!("{} | 2", find_short("Let's travel abroad shall we"));
     // println!("{} | TAACG", dna_strand("ATTGC"));

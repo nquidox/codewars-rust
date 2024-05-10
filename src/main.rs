@@ -189,9 +189,14 @@ fn check_exam(arr_a: &[&str], arr_b: &[&str]) -> i64 {
     if sum > 0 { sum } else { 0 }
 }
 
+fn xo(string: &'static str) -> bool {
+    string.chars().filter(|&c| c == 'x' || c == 'X').count() == string.chars().filter(|&c| c == 'o' || c == 'O').count()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 6", check_exam(&["a", "a", "b", "b"], &["a", "c", "b", "d"]));
+    println!("{} | false", xo("xxxm"));
+    // println!("{} | 6", check_exam(&["a", "a", "b", "b"], &["a", "c", "b", "d"]));
     // println!("{} | same", sum_or_product(&[13, 8, 22, 39, 12, 6, 14, 19, 4, 7, 33], 4));
     // println!("{} | 16", sum_of_minimums([[7, 9, 8, 6], [6, 5, 4, 3], [5, 7, 4, 5], [7, 9, 4, 3]]));
     // println!("{} | 2", find_short("Let's travel abroad shall we"));

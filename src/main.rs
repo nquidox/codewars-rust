@@ -212,9 +212,16 @@ fn get_sum(a: i64, b: i64) -> i64 {
     sum
 }
 
+fn sequence(x: u8) -> Vec<u8> {
+    let mut v:Vec<u8> = (1..=x).collect();
+    v.sort_by_cached_key(|&x| x.to_string());
+    v
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 14", get_sum(-1, 5));
+    println!("{:?} | [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]", sequence(16));
+    // println!("{} | 14", get_sum(-1, 5));
     // println!("{} | 3", cook_pancakes(3, 2));
     // println!("{} | 7.0685834705770345", square_area_to_circle(9.0));
     // println!("{} | false", xo("xxxm"));

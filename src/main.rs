@@ -201,10 +201,22 @@ fn cook_pancakes(n: u32, m: u32) -> u32 {
     if n <= m { 2 } else { ((n as f64 * 2.0) / m as f64).ceil() as u32 }
 }
 
+fn get_sum(a: i64, b: i64) -> i64 {
+    let mut sum = 0;
+    let mut x = a;
+    let mut y = b;
+    if a > b {x = b; y = a}
+    for i in x..=y {
+        sum += i
+    }
+    sum
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 3", cook_pancakes(3, 2))
-    // println!("{} | 7.0685834705770345", square_area_to_circle(9.0))
+    println!("{} | 14", get_sum(-1, 5));
+    // println!("{} | 3", cook_pancakes(3, 2));
+    // println!("{} | 7.0685834705770345", square_area_to_circle(9.0));
     // println!("{} | false", xo("xxxm"));
     // println!("{} | 6", check_exam(&["a", "a", "b", "b"], &["a", "c", "b", "d"]));
     // println!("{} | same", sum_or_product(&[13, 8, 22, 39, 12, 6, 14, 19, 4, 7, 33], 4));

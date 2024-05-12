@@ -218,9 +218,25 @@ fn sequence(x: u8) -> Vec<u8> {
     v
 }
 
+fn divisors(integer: u32) -> Result<Vec<u32>, String> {
+    let mut res = Vec::new();
+
+    for i in 2..=(integer/2){
+        if integer % i == 0{
+            res.push(i)
+        }
+    }
+
+    if res.len() < 1 {
+        return Err(format!("{integer} is prime"))
+    }
+    Ok(res)
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]", sequence(16));
+    println!("{:?} | [2, 3, 4, 6]", divisors(12))
+    // println!("{:?} | [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]", sequence(16));
     // println!("{} | 14", get_sum(-1, 5));
     // println!("{} | 3", cook_pancakes(3, 2));
     // println!("{} | 7.0685834705770345", square_area_to_circle(9.0));

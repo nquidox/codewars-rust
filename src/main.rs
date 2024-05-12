@@ -233,9 +233,24 @@ fn divisors(integer: u32) -> Result<Vec<u32>, String> {
     Ok(res)
 }
 
+fn ips_between(start: &str, end: &str) -> u32 {
+    let s1: Vec<u32> = start.split(".").map(|x| x.parse().unwrap()).collect();
+    let s2: Vec<u32> = end.split(".").map(|x| x.parse().unwrap()).collect();
+
+    let mut res1 = 0;
+    let mut res2 = 0;
+
+    for i in 0..4{
+        res1 = res1 * 256 + s1[i];
+        res2 = res2 * 256 + s2[i];
+    }
+    res2 - res1
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} | [2, 3, 4, 6]", divisors(12))
+    println!("{} | 50", ips_between("20.0.0.10", "20.0.1.0"))
+    // println!("{:?} | [2, 3, 4, 6]", divisors(12));
     // println!("{:?} | [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]", sequence(16));
     // println!("{} | 14", get_sum(-1, 5));
     // println!("{} | 3", cook_pancakes(3, 2));

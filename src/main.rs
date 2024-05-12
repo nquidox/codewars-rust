@@ -247,9 +247,21 @@ fn ips_between(start: &str, end: &str) -> u32 {
     res2 - res1
 }
 
+fn clean_string(s: &str) -> String {
+    let mut res: Vec<char> = Vec::new();
+    for c in s.chars(){
+        match c {
+            '#' => { res.pop(); },
+            _ => res.push(c)
+        }
+    }
+    res.into_iter().collect()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 50", ips_between("20.0.0.10", "20.0.1.0"))
+    println!("{} | ac", clean_string("abc#d##c"));
+    // println!("{} | 50", ips_between("20.0.0.10", "20.0.1.0"));
     // println!("{:?} | [2, 3, 4, 6]", divisors(12));
     // println!("{:?} | [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]", sequence(16));
     // println!("{} | 14", get_sum(-1, 5));

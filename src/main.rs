@@ -262,9 +262,19 @@ fn slice_plus_slice(xs: &[i32], ys: &[i32]) -> i32 {
     xs.iter().sum::<i32>() + ys.iter().sum::<i32>()
 }
 
+fn get_middle(s:&str) -> &str {
+    let mid = s.len()/2;
+    if s.len() % 2 == 0{
+        &s[mid-1..mid+1]
+    } else {
+        &s[mid..mid+1]
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 21", slice_plus_slice(&vec![1, 2, 3], &vec![4, 5, 6]));
+    println!("{} | dd", get_middle("middle"));
+    // println!("{} | 21", slice_plus_slice(&vec![1, 2, 3], &vec![4, 5, 6]));
     // println!("{} | ac", clean_string("abc#d##c"));
     // println!("{} | 50", ips_between("20.0.0.10", "20.0.1.0"));
     // println!("{:?} | [2, 3, 4, 6]", divisors(12));

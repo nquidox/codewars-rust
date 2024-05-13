@@ -271,9 +271,16 @@ fn get_middle(s:&str) -> &str {
     }
 }
 
+fn descending_order(x: u64) -> u64 {
+    let mut v: Vec<u64> = x.to_string().chars().filter_map(|d| d.to_digit(10)).map(|d| d as u64).collect();
+    v.sort_by(|a, b| b.cmp(a));
+    v.iter().fold(0, |acc, elem| acc * 10 + elem)
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | dd", get_middle("middle"));
+    println!("{} | 2110", descending_order(1021));
+    // println!("{} | dd", get_middle("middle"));
     // println!("{} | 21", slice_plus_slice(&vec![1, 2, 3], &vec![4, 5, 6]));
     // println!("{} | ac", clean_string("abc#d##c"));
     // println!("{} | 50", ips_between("20.0.0.10", "20.0.1.0"));

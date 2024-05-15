@@ -277,9 +277,20 @@ fn descending_order(x: u64) -> u64 {
     v.iter().fold(0, |acc, elem| acc * 10 + elem)
 }
 
+fn basic_op(operator: char, value1: i32, value2: i32) -> i32 {
+    match operator {
+        '+' => value1 + value2,
+        '-' => value1 - value2,
+        '*' => value1 * value2,
+        '/' => value1 / value2,
+        _ => panic!()
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 2110", descending_order(1021));
+    println!("{} | 11", basic_op('+', 4, 7));
+    // println!("{} | 2110", descending_order(1021));
     // println!("{} | dd", get_middle("middle"));
     // println!("{} | 21", slice_plus_slice(&vec![1, 2, 3], &vec![4, 5, 6]));
     // println!("{} | ac", clean_string("abc#d##c"));

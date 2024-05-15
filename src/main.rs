@@ -287,9 +287,17 @@ fn basic_op(operator: char, value1: i32, value2: i32) -> i32 {
     }
 }
 
+fn frog_contest(n: u32) -> String {
+    let chris = n * (n + 1) / 2;
+    let tom = (chris/2) * (chris/2 + 1) / 2;
+    let cat = (chris + tom) * (chris + tom + 1) / 2;
+    format!("Chris ate {chris} flies, Tom ate {tom} flies and Cat ate {cat} flies")
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | 11", basic_op('+', 4, 7));
+    println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));
+    // println!("{} | 11", basic_op('+', 4, 7));
     // println!("{} | 2110", descending_order(1021));
     // println!("{} | dd", get_middle("middle"));
     // println!("{} | 21", slice_plus_slice(&vec![1, 2, 3], &vec![4, 5, 6]));

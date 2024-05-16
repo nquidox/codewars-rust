@@ -1,4 +1,7 @@
 #![allow(dead_code)]
+
+use std::collections::HashSet;
+
 fn reversed_strings(phrase: &str) -> String {
     return phrase.chars().rev().collect()
 }
@@ -294,9 +297,17 @@ fn frog_contest(n: u32) -> String {
     format!("Chris ate {chris} flies, Tom ate {tom} flies and Cat ate {cat} flies")
 }
 
+fn is_pangram(s: &str) -> bool {
+    let alphabet: HashSet<_> = "abcdefghijklmnopqrstuvwxyz".chars().collect();
+    let s_chars: HashSet<_> = s.to_lowercase().chars().collect();
+
+    alphabet.is_subset(&s_chars)
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));
+    println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
+    // println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));
     // println!("{} | 11", basic_op('+', 4, 7));
     // println!("{} | 2110", descending_order(1021));
     // println!("{} | dd", get_middle("middle"));

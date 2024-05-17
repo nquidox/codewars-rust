@@ -304,9 +304,19 @@ fn is_pangram(s: &str) -> bool {
     alphabet.is_subset(&s_chars)
 }
 
+fn gimme_the_letters(sp: &str) -> String {
+    let range: Vec<&str> = sp.split("-").collect();
+    let mut res = String::new();
+    for i in range[0].chars().next().unwrap()..=range[1].chars().next().unwrap(){
+        res += i.to_string().as_str()
+    }
+    res
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
+    println!("{} | hijklmno", gimme_the_letters("h-o"));
+    // println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
     // println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));
     // println!("{} | 11", basic_op('+', 4, 7));
     // println!("{} | 2110", descending_order(1021));

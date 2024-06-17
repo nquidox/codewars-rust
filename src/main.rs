@@ -331,10 +331,14 @@ fn zero_fuel(distance_to_pump: u32, mpg: u32, gallons: u32) -> bool {
     mpg*gallons >= distance_to_pump
 }
 
+fn hero(bullets: u16, dragons: u16) -> bool {
+    bullets >= dragons*2
+}
 
 fn main() {
     println!("Codewars");
-    println!("{} {}", zero_fuel(50, 25, 2), true);
+    println!("{} {}", hero(7, 4), false)
+    // println!("{} {}", zero_fuel(50, 25, 2), true);
     // println!("{} {}", square_digits(9119), 811181);
     // println!("{} {}", get_char(64), '@');
     // println!("{} | hijklmno", gimme_the_letters("h-o"));

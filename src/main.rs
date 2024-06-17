@@ -335,9 +335,20 @@ fn hero(bullets: u16, dragons: u16) -> bool {
     bullets >= dragons*2
 }
 
+fn nb_year(p0: i32, percent: f64, aug: i32, p: i32)-> i32 {
+    let mut r = p0;
+    let mut years = 0;
+    while r < p {
+        r = r + (r as f64 *percent / 100.0) as i32 + aug;
+        years += 1
+    }
+    years
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", hero(7, 4), false)
+    println!("{} {}", nb_year(1500, 5.0, 100, 5000), 15);
+    // println!("{} {}", hero(7, 4), false);
     // println!("{} {}", zero_fuel(50, 25, 2), true);
     // println!("{} {}", square_digits(9119), 811181);
     // println!("{} {}", get_char(64), '@');

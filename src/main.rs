@@ -351,9 +351,21 @@ fn symmetric_point(p: [i32; 2], q: [i32; 2]) -> [i32; 2] {
     [x1, y1]
 }
 
+fn rental_car_cost(d: u32) -> u32 {
+    return if d < 3 {
+        d * 40
+    } else if d >= 3 && d < 7 {
+        d * 40 - 20
+    } else {
+        d * 40 - 50
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} {:?}", symmetric_point([0, 0], [1, 1]), [2, 2])
+    println!("{} {}", rental_car_cost(4), 140);
+    println!("{} {}", rental_car_cost(8), 270);
+    // println!("{:?} {:?}", symmetric_point([0, 0], [1, 1]), [2, 2])
     // println!("{} {}", nb_year(1500, 5.0, 100, 5000), 15);
     // println!("{} {}", hero(7, 4), false);
     // println!("{} {}", zero_fuel(50, 25, 2), true);

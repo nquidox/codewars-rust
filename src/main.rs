@@ -327,11 +327,16 @@ fn square_digits(num: u64) -> u64 {
     squared.parse().unwrap()
 }
 
+fn zero_fuel(distance_to_pump: u32, mpg: u32, gallons: u32) -> bool {
+    mpg*gallons >= distance_to_pump
+}
+
 
 fn main() {
     println!("Codewars");
-    println!("{} {}", square_digits(9119), 811181)
-    // println!("{} {}", get_char(64), '@')
+    println!("{} {}", zero_fuel(50, 25, 2), true);
+    // println!("{} {}", square_digits(9119), 811181);
+    // println!("{} {}", get_char(64), '@');
     // println!("{} | hijklmno", gimme_the_letters("h-o"));
     // println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
     // println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));

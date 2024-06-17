@@ -345,9 +345,16 @@ fn nb_year(p0: i32, percent: f64, aug: i32, p: i32)-> i32 {
     years
 }
 
+fn symmetric_point(p: [i32; 2], q: [i32; 2]) -> [i32; 2] {
+    let x1 = q[0] * 2 - p[0];
+    let y1 = q[1] * 2 - p[1];
+    [x1, y1]
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", nb_year(1500, 5.0, 100, 5000), 15);
+    println!("{:?} {:?}", symmetric_point([0, 0], [1, 1]), [2, 2])
+    // println!("{} {}", nb_year(1500, 5.0, 100, 5000), 15);
     // println!("{} {}", hero(7, 4), false);
     // println!("{} {}", zero_fuel(50, 25, 2), true);
     // println!("{} {}", square_digits(9119), 811181);

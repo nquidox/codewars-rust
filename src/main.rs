@@ -313,9 +313,15 @@ fn gimme_the_letters(sp: &str) -> String {
     res
 }
 
+fn get_char(c: i32) -> char {
+    c as u8 as char
+}
+
+
 fn main() {
     println!("Codewars");
-    println!("{} | hijklmno", gimme_the_letters("h-o"));
+    println!("{} {}", get_char(64), '@')
+    // println!("{} | hijklmno", gimme_the_letters("h-o"));
     // println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
     // println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));
     // println!("{} | 11", basic_op('+', 4, 7));

@@ -317,10 +317,21 @@ fn get_char(c: i32) -> char {
     c as u8 as char
 }
 
+fn square_digits(num: u64) -> u64 {
+    let squared: String = num.to_string()
+        .chars()
+        .map(|c| c.to_digit(10).unwrap())
+        .map(|d| d*d)
+        .map(|d| d.to_string())
+        .collect();
+    squared.parse().unwrap()
+}
+
 
 fn main() {
     println!("Codewars");
-    println!("{} {}", get_char(64), '@')
+    println!("{} {}", square_digits(9119), 811181)
+    // println!("{} {}", get_char(64), '@')
     // println!("{} | hijklmno", gimme_the_letters("h-o"));
     // println!("{} | true", is_pangram("The quick, brown fox jumps over the lazy dog!"));
     // println!("{} | Chris ate 15 flies, Tom ate 28 flies and Cat ate 946 flies", frog_contest(5));

@@ -361,10 +361,15 @@ fn rental_car_cost(d: u32) -> u32 {
     }
 }
 
+fn move_hero(position: u32, roll: u32) -> u32 {
+    position + roll*2
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", rental_car_cost(4), 140);
-    println!("{} {}", rental_car_cost(8), 270);
+    println!("{} {}", move_hero(0, 4), 8);
+    // println!("{} {}", rental_car_cost(4), 140);
+    // println!("{} {}", rental_car_cost(8), 270);
     // println!("{:?} {:?}", symmetric_point([0, 0], [1, 1]), [2, 2])
     // println!("{} {}", nb_year(1500, 5.0, 100, 5000), 15);
     // println!("{} {}", hero(7, 4), false);

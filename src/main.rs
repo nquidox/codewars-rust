@@ -365,9 +365,18 @@ fn move_hero(position: u32, roll: u32) -> u32 {
     position + roll*2
 }
 
+fn combat(health: f32, damage: f32) -> f32 {
+    if health - damage > 0.0{
+        health - damage
+    } else {
+        0.0
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", move_hero(0, 4), 8);
+    println!("{} {}", combat(92.0, 8.0), 84.0)
+    // println!("{} {}", move_hero(0, 4), 8);
     // println!("{} {}", rental_car_cost(4), 140);
     // println!("{} {}", rental_car_cost(8), 270);
     // println!("{:?} {:?}", symmetric_point([0, 0], [1, 1]), [2, 2])

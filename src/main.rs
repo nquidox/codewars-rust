@@ -377,9 +377,20 @@ fn find_smallest_int(arr: &[i32]) -> i32 {
     *arr.iter().min().unwrap()
 }
 
+fn get_grade(s1: u16, s2: u16, s3: u16) -> char {
+    match (s1+s2+s3)/3 {
+        90..=100 => 'A',
+        80..90 => 'B',
+        70..80 => 'C',
+        60..70 => 'D',
+        _ => 'F',
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);
+    println!("{} {}", get_grade(95, 90, 93), "A")
+    // println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);
     // println!("{} {}", combat(92.0, 8.0), 84.0)
     // println!("{} {}", move_hero(0, 4), 8);
     // println!("{} {}", rental_car_cost(4), 140);

@@ -373,9 +373,14 @@ fn combat(health: f32, damage: f32) -> f32 {
     }
 }
 
+fn find_smallest_int(arr: &[i32]) -> i32 {
+    *arr.iter().min().unwrap()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", combat(92.0, 8.0), 84.0)
+    println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);
+    // println!("{} {}", combat(92.0, 8.0), 84.0)
     // println!("{} {}", move_hero(0, 4), 8);
     // println!("{} {}", rental_car_cost(4), 140);
     // println!("{} {}", rental_car_cost(8), 270);

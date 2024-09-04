@@ -387,9 +387,14 @@ fn get_grade(s1: u16, s2: u16, s3: u16) -> char {
     }
 }
 
+fn expressions_matter(a: u64, b: u64, c: u64) -> u64 {
+    *[a*(b+c), a*b*c, a+b+c, (a+b)*c].iter().max().unwrap()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", get_grade(95, 90, 93), "A")
+    println!("{} {}", expressions_matter(1, 2, 3), 9)
+    // println!("{} {}", get_grade(95, 90, 93), "A")
     // println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);
     // println!("{} {}", combat(92.0, 8.0), 84.0)
     // println!("{} {}", move_hero(0, 4), 8);

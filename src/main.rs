@@ -391,9 +391,14 @@ fn expressions_matter(a: u64, b: u64, c: u64) -> u64 {
     *[a*(b+c), a*b*c, a+b+c, (a+b)*c].iter().max().unwrap()
 }
 
+fn dna_to_rna(dna: &str) -> String {
+    dna.replace("T", "U")
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", expressions_matter(1, 2, 3), 9)
+    println!("{} {}", dna_to_rna("GCAT"), "GCAU")
+    // println!("{} {}", expressions_matter(1, 2, 3), 9)
     // println!("{} {}", get_grade(95, 90, 93), "A")
     // println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);
     // println!("{} {}", combat(92.0, 8.0), 84.0)

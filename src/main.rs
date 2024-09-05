@@ -395,9 +395,14 @@ fn dna_to_rna(dna: &str) -> String {
     dna.replace("T", "U")
 }
 
+fn make_upper_case(s: &str) -> String {
+    s.to_uppercase()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", dna_to_rna("GCAT"), "GCAU")
+    println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");
+    // println!("{} {}", dna_to_rna("GCAT"), "GCAU")
     // println!("{} {}", expressions_matter(1, 2, 3), 9)
     // println!("{} {}", get_grade(95, 90, 93), "A")
     // println!("{} {}", find_smallest_int(&[34, -345, -1, 100]), -345);

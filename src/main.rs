@@ -399,9 +399,14 @@ fn make_upper_case(s: &str) -> String {
     s.to_uppercase()
 }
 
+fn difference_in_ages(ages: &[u8]) -> (u8, u8, u8) {
+    (*ages.iter().min().unwrap(), *ages.iter().max().unwrap(), *ages.iter().max().unwrap() - ages.iter().min().unwrap())
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");
+    println!("{:?} {:?}", difference_in_ages(&[16, 22, 31, 44, 3, 38, 27, 41, 88]), (3, 88, 85))
+    // println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");
     // println!("{} {}", dna_to_rna("GCAT"), "GCAU")
     // println!("{} {}", expressions_matter(1, 2, 3), 9)
     // println!("{} {}", get_grade(95, 90, 93), "A")

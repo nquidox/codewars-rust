@@ -408,9 +408,17 @@ fn nearest_sq(n: u32) -> u32 {
     num * num
 }
 
+fn merge_arrays(arr1: &[i32], arr2: &[i32]) -> Vec<i32> {
+    let mut merged = [arr1, arr2].concat();
+    merged.sort();
+    merged.dedup();
+    merged
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", nearest_sq(121), nearest_sq(111));
+    println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);
+    // println!("{} {}", nearest_sq(121), nearest_sq(111));
     // println!("{:?} {:?}", difference_in_ages(&[16, 22, 31, 44, 3, 38, 27, 41, 88]), (3, 88, 85))
     // println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");
     // println!("{} {}", dna_to_rna("GCAT"), "GCAU")

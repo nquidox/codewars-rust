@@ -403,9 +403,15 @@ fn difference_in_ages(ages: &[u8]) -> (u8, u8, u8) {
     (*ages.iter().min().unwrap(), *ages.iter().max().unwrap(), *ages.iter().max().unwrap() - ages.iter().min().unwrap())
 }
 
+fn nearest_sq(n: u32) -> u32 {
+    let num= (n as f64).sqrt().round() as u32;
+    num * num
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} {:?}", difference_in_ages(&[16, 22, 31, 44, 3, 38, 27, 41, 88]), (3, 88, 85))
+    println!("{} {}", nearest_sq(121), nearest_sq(111));
+    // println!("{:?} {:?}", difference_in_ages(&[16, 22, 31, 44, 3, 38, 27, 41, 88]), (3, 88, 85))
     // println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");
     // println!("{} {}", dna_to_rna("GCAT"), "GCAU")
     // println!("{} {}", expressions_matter(1, 2, 3), 9)

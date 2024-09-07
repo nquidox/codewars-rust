@@ -419,9 +419,18 @@ fn multiply(a: i32, b: i32) -> i32 {
     a * b
 }
 
+fn find_average(slice: &[f64]) -> f64 {
+    if slice.len() == 0 {
+        0.0
+    } else {
+        slice.iter().sum::<f64>() / slice.len() as f64
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);
+    println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);
+    // println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);
     // println!("{} {}", nearest_sq(121), nearest_sq(111));
     // println!("{:?} {:?}", difference_in_ages(&[16, 22, 31, 44, 3, 38, 27, 41, 88]), (3, 88, 85))
     // println!("{} {}", make_upper_case("lowercase"), "LOWERCASE");

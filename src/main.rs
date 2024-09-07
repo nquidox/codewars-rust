@@ -415,6 +415,10 @@ fn merge_arrays(arr1: &[i32], arr2: &[i32]) -> Vec<i32> {
     merged
 }
 
+fn multiply(a: i32, b: i32) -> i32 {
+    a * b
+}
+
 fn main() {
     println!("Codewars");
     println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);

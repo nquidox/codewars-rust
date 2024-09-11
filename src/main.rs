@@ -431,6 +431,10 @@ fn reverse_words(words: &str) -> String {
     words.split_whitespace().rev().collect::<Vec<&str>>().join(" ")
 }
 
+fn bool_to_word(value: bool) -> &'static str {
+    if value {"Yes"} else {"No"}
+}
+
 fn main() {
     println!("Codewars");
     println!("{}", reverse_words("Hello world!"))

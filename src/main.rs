@@ -435,6 +435,10 @@ fn bool_to_word(value: bool) -> &'static str {
     if value {"Yes"} else {"No"}
 }
 
+fn get_volume_of_cuboid(length: f32, width: f32, height: f32) -> f32 {
+    length*width*height
+}
+
 fn main() {
     println!("Codewars");
     println!("{}", reverse_words("Hello world!"))

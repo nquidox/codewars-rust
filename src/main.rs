@@ -439,9 +439,14 @@ fn get_volume_of_cuboid(length: f32, width: f32, height: f32) -> f32 {
     length*width*height
 }
 
+fn double_char(s: &str) -> String {
+    s.chars().flat_map(|c| vec![c,c]).collect()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{}", reverse_words("Hello world!"))
+    println!("{}", double_char("Rust"))
+    //println!("{}", reverse_words("Hello world!"))
     //println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);
     // println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);
     // println!("{} {}", nearest_sq(121), nearest_sq(111));

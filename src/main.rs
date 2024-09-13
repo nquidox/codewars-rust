@@ -443,9 +443,14 @@ fn double_char(s: &str) -> String {
     s.chars().flat_map(|c| vec![c,c]).collect()
 }
 
+fn get_age(age: &str) -> u32 {
+    age.as_bytes()[0] as u32 - 48
+}
+
 fn main() {
     println!("Codewars");
-    println!("{}", double_char("Rust"))
+    println!("{} {}", get_age("7 years old"), 7)
+    //println!("{}", double_char("Rust"))
     //println!("{}", reverse_words("Hello world!"))
     //println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);
     // println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);

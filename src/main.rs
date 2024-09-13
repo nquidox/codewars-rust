@@ -447,9 +447,15 @@ fn get_age(age: &str) -> u32 {
     age.as_bytes()[0] as u32 - 48
 }
 
+fn abbrev_name(name: &str) -> String {
+    let k = name.split_whitespace().collect::<Vec<_>>();
+    k[0].chars().nth(0).unwrap().to_string().to_uppercase() + "." + &k[1].chars().nth(0).unwrap().to_string().to_uppercase()
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", get_age("7 years old"), 7)
+    println!("{} {}", abbrev_name("John Doe"), "J.D")
+    // println!("{} {}", get_age("7 years old"), 7)
     //println!("{}", double_char("Rust"))
     //println!("{}", reverse_words("Hello world!"))
     //println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);

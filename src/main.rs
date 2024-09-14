@@ -452,10 +452,17 @@ fn abbrev_name(name: &str) -> String {
     k[0].chars().nth(0).unwrap().to_string().to_uppercase() + "." + &k[1].chars().nth(0).unwrap().to_string().to_uppercase()
 }
 
+fn fake_bin(s: &str) -> String {
+    let mut res = String::new();
+    s.chars().for_each(|c| {if c < '5' {res += "0"} else {res += "1"}});
+    res
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", abbrev_name("John Doe"), "J.D")
-    // println!("{} {}", get_age("7 years old"), 7)
+    println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
+    //println!("{} {}", abbrev_name("John Doe"), "J.D")
+    //println!("{} {}", get_age("7 years old"), 7)
     //println!("{}", double_char("Rust"))
     //println!("{}", reverse_words("Hello world!"))
     //println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);

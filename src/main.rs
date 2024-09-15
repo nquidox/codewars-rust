@@ -489,6 +489,14 @@ fn update_light(current: &str) -> String {
     }
 }
 
+fn paperwork(n: i16, m: i16) -> u32 {
+    if n < 0 || m < 0 {
+        0
+    } else {
+        (n*m) as u32
+    }
+}
+
 fn main() {
     println!("Codewars");
     // println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");

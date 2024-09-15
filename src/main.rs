@@ -501,9 +501,25 @@ fn get_average(marks: &[i32]) -> i32 {
     marks.iter().sum::<i32>() / marks.len() as i32
 }
 
+fn cannons_ready(gunners: HashMap<&str, &str>) -> String {
+    let mut resp = String::from("Fire!");
+    for (_ , &v) in gunners.iter(){
+        if v == "nay" {
+            resp = String::from("Shiver me timbers!");
+        }
+    }
+    resp
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", get_average(&[1,2,15,15,17,11,12,17,17,14,13,15,6,11,8,7]), 11);
+    println!("{} {}", cannons_ready(HashMap::from([
+        ("Mike", "aye"),
+        ("Joe", "aye"),
+        ("Johnson", "aye"),
+        ("Peter", "aye"),
+    ])), "Fire!");
+    // println!("{} {}", get_average(&[1,2,15,15,17,11,12,17,17,14,13,15,6,11,8,7]), 11);
     // println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
     //println!("{} {}", abbrev_name("John Doe"), "J.D");
     //println!("{} {}", get_age("7 years old"), 7);

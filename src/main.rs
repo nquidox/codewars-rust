@@ -497,13 +497,18 @@ fn paperwork(n: i16, m: i16) -> u32 {
     }
 }
 
+fn get_average(marks: &[i32]) -> i32 {
+    marks.iter().sum::<i32>() / marks.len() as i32
+}
+
 fn main() {
     println!("Codewars");
+    println!("{} {}", get_average(&[1,2,15,15,17,11,12,17,17,14,13,15,6,11,8,7]), 11);
     // println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
-    //println!("{} {}", abbrev_name("John Doe"), "J.D")
-    //println!("{} {}", get_age("7 years old"), 7)
-    //println!("{}", double_char("Rust"))
-    //println!("{}", reverse_words("Hello world!"))
+    //println!("{} {}", abbrev_name("John Doe"), "J.D");
+    //println!("{} {}", get_age("7 years old"), 7);
+    //println!("{}", double_char("Rust"));
+    //println!("{}", reverse_words("Hello world!"));
     //println!("{:?} {}", find_average(&[1.0, 2.0, 3.0]), 2.0);
     // println!("{:?} {:?}", merge_arrays(&[1,2,3,4], &[5,6,7,8]), &[1,2,3,4,5,6,7,8]);
     // println!("{} {}", nearest_sq(121), nearest_sq(111));

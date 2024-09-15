@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 fn reversed_strings(phrase: &str) -> String {
     return phrase.chars().rev().collect()
@@ -458,9 +458,31 @@ fn fake_bin(s: &str) -> String {
     res
 }
 
+fn greet(language: &str) -> &str {
+    match language{
+        "czech" => "Vitejte",
+        "danish" => "Velkomst",
+        "dutch" => "Welkom",
+        "estonian" => "Tere tulemast",
+        "finnish" => "Tervetuloa",
+        "flemish" => "Welgekomen",
+        "french" => "Bienvenue",
+        "german" => "Willkommen",
+        "irish" => "Failte",
+        "italian" => "Benvenuto",
+        "latvian" => "Gaidits",
+        "lithuanian" => "Laukiamas",
+        "polish" => "Witamy",
+        "spanish" => "Bienvenido",
+        "swedish" => "Valkommen",
+        "welsh" => "Croeso",
+        _ => "Welcome"
+    }
+}
+
 fn main() {
     println!("Codewars");
-    println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
+    // println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
     //println!("{} {}", abbrev_name("John Doe"), "J.D")
     //println!("{} {}", get_age("7 years old"), 7)
     //println!("{}", double_char("Rust"))

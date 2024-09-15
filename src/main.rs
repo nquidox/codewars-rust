@@ -480,6 +480,15 @@ fn greet(language: &str) -> &str {
     }
 }
 
+fn update_light(current: &str) -> String {
+    match current {
+        "red" => "green".to_string(),
+        "yellow" => "red".to_string(),
+        "green" => "yellow".to_string(),
+        _ => "Hi there!".to_string()
+    }
+}
+
 fn main() {
     println!("Codewars");
     // println!("{} {}", fake_bin("45385593107843568"), "01011110001100111");
